@@ -1,2 +1,29 @@
 // colors
 $border-color: #e6e6e6
+$text-black: #111
+$text-gray: #444
+
+$toggler-part-height: 2px
+$toggler-part-bg-color: #000
+$transition-time: 0.3s
+
+
+
+//Общие значения
+body
+  min-width: 320px
+
+
+//Класс unvis для сокрытия элементов
+.unvis:not(:focus):not(:active)
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+

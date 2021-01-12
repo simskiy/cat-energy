@@ -1,6 +1,6 @@
 <template lang="pug">
-  li.item
-    router-link(:to="href", class="item__link") {{title}}
+  li.menu-item
+    router-link(:to="href", class="menu-item__link") {{title}}
 </template>
 
 <script>
@@ -10,11 +10,21 @@ export default {
 </script>
 
 <style lang="sass">
-  .item
+  .menu-item
+    display: flex
+    justify-content: space-around
+    align-items: center
+    box-sizing: border-box
     font-family: 'Oswald', Arial, Helvetica, sans-serif
     font-size: 20px
     font-weight: 500
     text-transform: uppercase
     height: 65px
+    border-bottom: 1px solid $border-color
+    transition: height $transition-time
+
+    &__link
+      text-decoration: none
+      color: $text-black
 
 </style>
