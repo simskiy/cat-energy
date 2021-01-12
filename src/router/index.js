@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import index from '../components/index.vue'
-import catalog from '../components/catalog.vue'
-import form from '../components/form.vue'
+import index from '../components/index/index.vue'
+import catalog from '../components/catalog/catalog.vue'
+import form from '../components/form/form.vue'
 
 Vue.use(VueRouter)
 

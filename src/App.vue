@@ -2,18 +2,21 @@
   #app
     main-menu
     router-view
+    app-footer
 </template>
 
 <script>
-import mainMenu from './components/main-menu.vue'
+import mainMenu from './components/mainMenu/main-menu.vue'
+import appFooter from './components/footer/appFooter.vue'
 
 export default {
   components: {
-    mainMenu
+    mainMenu,
+    appFooter
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="sass">
 
 </style>
