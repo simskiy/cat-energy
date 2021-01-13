@@ -1,8 +1,10 @@
 <template lang="pug">
+  include ../../Pug/picture.pug
   nav.menu
     .menu__header
-      img(src="./img/logo_mobile.svg", alt="Логотип Кэт Энерджи")
-      img(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
+      router-link(to="/")
+        +picture-svg('menu__logo', 'logo', 'Логотип')
+      img.menu__title(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
       .menu__btn(role="button", :class="{'menu__btn--close': isActive}", @click="isActive = !isActive")
         span
     ul.menu__list(:class="{'menu__list--hide': !isActive}")
@@ -96,6 +98,11 @@ export default {
         &:after
           transform: rotate3d(0, 0, 1, -45deg)
 
+  &__logo
+    &:hover
+      opacity: 0.8
+    &:active
+      opacity: 0.6
   &__list
     list-style: none
     padding: 0
@@ -109,12 +116,43 @@ export default {
         transition: height $transition-time
 +md-block
   .menu
+    display: flex;
+    padding-left: 30px
+    padding-right: 30px
+    box-sizing: border-box
+    justify-content: space-between
     &__header
-      display: flex
+      padding-left: 0px
+      padding-right: 0px
+      margin-right: 95px
+      border: none
+
+    &__title
+      display: none
 
     &__btn
       display: none
 
     &__list
       display: flex
+      margin-left: auto
+
+      &--hide
+        .menu-item
+          height: inherit
+          font-size: inherit
+
++lg-block
+  .menu
+    padding-left: 110px
+    padding-right: 110px
+    max-width: 1440px
+    box-sizing: border-box
+    margin: auto
+
+    &__header
+      margin-right: auto
+
+    &__list
+      width: auto
 </style>

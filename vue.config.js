@@ -1,17 +1,16 @@
 const path = require('path')
 
 module.exports = {
+
   devServer: {
     hot: true,
     open: true
   },
 
-  chainWebpack: config => {
-    configureWebpack: {
-      module.rules = [{
-        test: /\.pug$/,
-        loader: 'pug-plain-loader'
-      }]
+  pages: {
+    index: {
+      entry: './src/main.js',
+      template: './src/index.pug'
     }
   },
 
@@ -19,9 +18,9 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'sass',
       patterns: [
-        path.resolve(__dirname, './src/styles/global.sass'),
-        path.resolve(__dirname, './src/styles/smart-grid.sass'),
-        path.resolve(__dirname, './src/styles/mixins.sass')
+        path.resolve(__dirname, './src/styles/_global.sass'),
+        path.resolve(__dirname, './src/styles/_smart-grid.sass'),
+        path.resolve(__dirname, './src/styles/_mixins.sass'),
       ]
     }
   }

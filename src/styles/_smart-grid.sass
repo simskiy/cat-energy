@@ -6,9 +6,9 @@ $break_md: 768px
 $break_lg: 1440px
 
 $offset: 30px
-$offset_sm: $offset
-$offset_md: $offset
-$offset_lg: $offset
+$offset_sm: 0
+$offset_md: 30px
+$offset_lg: 80px
 
 $offset_one_side: ($offset / 2)
 $offset_sm_one_side: ($offset_sm / 2)
@@ -16,18 +16,57 @@ $offset_md_one_side: ($offset_md / 2)
 $offset_lg_one_side: ($offset_lg / 2)
 
 $fields: 30px
+$fields_sm: 0
+$fields_md: 30px
+$fields_lg: 110px
 
 =wrapper-full()
     padding-left: $fields
     padding-right: $fields
 
+    +sm-block()
+        padding-left: $fields_sm
+        padding-right: $fields_sm
+
+    +md-block()
+        padding-left: $fields_md
+        padding-right: $fields_md
+
+    +lg-block()
+        padding-left: $fields_lg
+        padding-right: $fields_lg
+
 =row-offsets()
     margin-left: ($offset_one_side * -1)
     margin-right: ($offset_one_side * -1)
 
+    +sm-block()
+        margin-left: ($offset_sm_one_side * -1)
+        margin-right: ($offset_sm_one_side * -1)
+
+    +md-block()
+        margin-left: ($offset_md_one_side * -1)
+        margin-right: ($offset_md_one_side * -1)
+
+    +lg-block()
+        margin-left: ($offset_lg_one_side * -1)
+        margin-right: ($offset_lg_one_side * -1)
+
 =col-offsets($type)
     #{$type}-left: $offset_one_side
     #{$type}-right: $offset_one_side
+
+    +sm-block()
+        #{$type}-left: $offset_sm_one_side
+        #{$type}-right: $offset_sm_one_side
+
+    +md-block()
+        #{$type}-left: $offset_md_one_side
+        #{$type}-right: $offset_md_one_side
+
+    +lg-block()
+        #{$type}-left: $offset_lg_one_side
+        #{$type}-right: $offset_lg_one_side
 
 =wrapper()
     max-width: 1440px
@@ -296,6 +335,9 @@ $fields: 30px
             > div
                 +col()
                 +size(1)
+                +size-sm(1)
+                +size-md(1)
+                +size-lg(1)
                 height: inherit
                 outline: $outline
                 background: $background

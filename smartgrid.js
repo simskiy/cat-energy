@@ -1,7 +1,7 @@
 const smartGrid = require('smart-grid')
 
 const options = {
-  filename: 'smart-grid',
+  filename: '_smart-grid',
   outputStyle: 'sass',
   columns: 12,
   offset: '30px',
@@ -12,13 +12,20 @@ const options = {
   },
   breakPoints: {
     lg: {
-      width: '1440px'
+      width: '1440px',
+      fields: '110px',
+      offset: '80px'
     },
     md: {
-      width: '768px'
+      width: '768px',
+      fields: '30px',
+      offset: '30px'
+
     },
     sm: {
-      width: '320px'
+      width: '320px',
+      fields: 0,
+      offset: 0
     }
 
   },
@@ -50,4 +57,4 @@ const options = {
   detailedCalc: false
 }
 
-smartGrid('./src/SCSS', options)
+smartGrid('./src/styles', options)
