@@ -12,7 +12,7 @@ const options = {
   },
   breakPoints: {
     lg: {
-      width: '1440px',
+      width: '1220px',
       fields: '110px',
       offset: '80px'
     },

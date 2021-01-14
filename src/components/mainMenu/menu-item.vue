@@ -18,7 +18,7 @@ export default {
     font-family: 'Oswald'
     text-transform: uppercase
     height: 65px
-    border-bottom: 1px solid $border-color
+    border-bottom: 1px solid $border-menu
     transition: height $transition-time
     font-size: 20px
     font-weight: 500

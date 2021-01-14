@@ -14,6 +14,7 @@ const routes = [
   {
     path: '/catalog',
     component: catalog
+
   },
   {
     path: '/form',

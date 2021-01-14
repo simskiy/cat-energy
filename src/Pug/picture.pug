@@ -1,5 +1,5 @@
 mixin picture-retina(classname, name, alt="фото")
-  - var desktop = "min-width: 1440px";
+  - var desktop = "min-width: 1220px";
   - var tablet = "min-width: 768px";
   - var mobile = "min-width: 320px";
   picture(class=classname)
@@ -10,7 +10,7 @@ mixin picture-retina(classname, name, alt="фото")
 
 
 mixin picture-img(classname, name, alt="Фото")
-  - var desktop = "min-width: 1440px";
+  - var desktop = "min-width: 1220px";
   - var tablet = "min-width: 768px";
   - var mobile = "min-width: 320px";
   picture(class=classname)
@@ -20,7 +20,7 @@ mixin picture-img(classname, name, alt="Фото")
     img(src=`./img/${name}-mobile.jpg`, alt=alt)
 
 mixin picture-svg(classname, name, alt="Фото")
-  - var desktop = "min-width: 1440px";
+  - var desktop = "min-width: 1220px";
   - var tablet = "min-width: 768px";
   - var mobile = "min-width: 320px";
   picture(class=classname)

@@ -1,16 +1,17 @@
 <template lang="pug">
   include ../../Pug/picture.pug
-  nav.menu
-    .menu__header
-      router-link(to="/")
-        +picture-svg('menu__logo', 'logo', 'Логотип')
-      img.menu__title(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
-      .menu__btn(role="button", :class="{'menu__btn--close': isActive}", @click="isActive = !isActive")
-        span
-    ul.menu__list(:class="{'menu__list--hide': !isActive}")
-      menuItem(href='/', title='Главная')
-      menuItem(href='/catalog', title='Каталог продукции')
-      menuItem(href='/form', title='Подбор программы')
+  header
+    nav.menu
+      .menu__header
+        router-link(to="/")
+          +picture-svg('menu__logo', 'logo', 'Логотип')
+        img.menu__title(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
+        .menu__btn(role="button", :class="{'menu__btn--close': isActive}", @click="isActive = !isActive")
+          span
+      ul.menu__list(:class="{'menu__list--hide': !isActive}")
+        menuItem(href='/', title='Главная')
+        menuItem(href='/catalog', title='Каталог продукции')
+        menuItem(href='/form', title='Подбор программы')
 </template>
 
 <script>
@@ -32,6 +33,7 @@ export default {
 .menu
   width: 100%
   height: auto
+  max-width: 1440px
 
   &__header
     box-sizing: border-box
@@ -41,7 +43,7 @@ export default {
     justify-content: space-between
     align-items: center
     height: 65px
-    border: 1px solid $border-color
+    border: 1px solid $border-menu
   &__btn
     display: inline-block
     position: relative
@@ -146,7 +148,6 @@ export default {
   .menu
     padding-left: 110px
     padding-right: 110px
-    max-width: 1440px
     box-sizing: border-box
     margin: auto
 
