@@ -1,7 +1,8 @@
 <template lang="pug">
   #app
     main-menu
-    router-view
+    transition(name="fade", mode="out-in")
+      router-view
     app-footer
 </template>
 
@@ -18,5 +19,10 @@ export default {
 </script>
 
 <style lang="sass">
+.fade-enter-active, .fade-leave-active
+  transition: opacity .5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+  opacity: 0
 
 </style>
