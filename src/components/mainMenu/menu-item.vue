@@ -15,7 +15,6 @@ export default {
     justify-content: space-around
     align-items: center
     box-sizing: border-box
-    font-family: 'Oswald'
     text-transform: uppercase
     height: 65px
     border-bottom: 1px solid $border-menu
@@ -49,6 +48,7 @@ export default {
     .menu-item
       &__link
         font-size: 20px
+        color: $color-white
         &--active
           border-bottom: 2px solid $border-active-desktop
 

@@ -1,17 +1,16 @@
 <template lang="pug">
   include ../../Pug/picture.pug
-  header
-    nav.menu
-      .menu__header
-        router-link(to="/")
-          +picture-svg('menu__logo', 'logo', 'Логотип')
-        img.menu__title(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
-        .menu__btn(role="button", :class="{'menu__btn--close': isActive}", @click="isActive = !isActive")
-          span
-      ul.menu__list(:class="{'menu__list--hide': !isActive}")
-        menuItem(href='/', title='Главная')
-        menuItem(href='/catalog', title='Каталог продукции')
-        menuItem(href='/form', title='Подбор программы')
+  nav.menu
+    .menu__header
+      router-link(to="/")
+        +picture-svg('menu__logo', 'logo', 'Логотип')
+      img.menu__title(src="./img/logo_mobile_header.svg", alt="Кэт Энерджи")
+      .menu__btn(role="button", :class="{'menu__btn--close': isActive}", @click="isActive = !isActive")
+        span
+    ul.menu__list(:class="{'menu__list--hide': !isActive}")
+      menuItem(href='/', title='Главная')
+      menuItem(href='/catalog', title='Каталог продукции')
+      menuItem(href='/form', title='Подбор программы')
 </template>
 
 <script>
@@ -146,6 +145,10 @@ export default {
 
 +lg-block
   .menu
+    position: absolute
+    top: 77px
+    left: 0
+    right: 0
     padding-left: 110px
     padding-right: 110px
     box-sizing: border-box

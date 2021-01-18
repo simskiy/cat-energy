@@ -1,13 +1,12 @@
 <template lang="pug">
-  h1 index page
+  app-header
 </template>
 
 <script>
+import appHeader from './header.vue'
 export default {
-  data () {
-    return {
-
-    }
+  components: {
+    appHeader
   }
 }
 </script>
