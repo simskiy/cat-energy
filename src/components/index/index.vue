@@ -1,12 +1,16 @@
 <template lang="pug">
-  app-header
+  main
+    app-header
+    app-categories
 </template>
 
 <script>
 import appHeader from './header.vue'
+import appCategories from './categories.vue'
 export default {
   components: {
-    appHeader
+    appHeader,
+    appCategories
   }
 }
 </script>

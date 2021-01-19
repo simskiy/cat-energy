@@ -39,6 +39,7 @@ export default {
 .footer
   box-sizing: border-box
   width: 100%
+  max-width: 1440px
   padding-left: 20px
   padding-right: 20px
   background-color: $bg-gray
@@ -94,7 +95,7 @@ export default {
 
 .copyright
   &__title
-    font-family: "Arial", monospace
+    font-family: $font-monotype
     font-size: 16px
     font-weight: 400
     color: $footer-text
@@ -159,5 +160,6 @@ export default {
   .footer
     padding-left: 110px
     padding-right: 110px
+    margin: auto
 
 </style>

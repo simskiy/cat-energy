@@ -20,7 +20,7 @@ export default {
   margin: auto
   text-align: center
   color: $color-white
-  background: url('./img/index_can_mobile.png') center 230px no-repeat fixed, url('./img/index_background_mobile.jpg') center 65px no-repeat fixed
+  background: url('./img/index_can_mobile.png') center 167px no-repeat, url('./img/index_background_mobile.jpg') center top no-repeat
   &__banner
     position: relative
     padding-top: 25px
@@ -40,10 +40,12 @@ export default {
     left: 20px
   &__link
     display: inline-block
+    cursor: pointer
     margin-top: 300px
     text-align: center
   &__btn
-    background-color: $color-green
+    cursor: pointer
+    background-color: $btn-color
     width: 280px
     height: 40px
     border: none
@@ -51,6 +53,10 @@ export default {
     font-size: 14px
     text-transform: uppercase
     color: $color-white
+    &:hover
+      background-color: $btn-hover
+    &:active
+      color: rgba($color-white, 0.3)
 
 +md-block
   .header
@@ -89,6 +95,8 @@ export default {
     height: 696px
     margin: auto
     background: url('./img/index_can.png') 560px 180px no-repeat, url('./img/index_background_desktop.jpg') right top no-repeat
+    &__banner
+      padding-left: 190px
     &__title
       margin-top: 80px
       width: 450px
