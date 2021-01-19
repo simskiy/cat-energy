@@ -145,6 +145,7 @@ export default {
     &__list
       display: flex
       justify-content: space-between
+      margin-top: 80px
     &__item
       margin: 0
       box-sizing: border-box
