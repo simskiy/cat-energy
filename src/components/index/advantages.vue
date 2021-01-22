@@ -57,9 +57,7 @@ export default {
   &__text
     margin: 0
     padding-left: 20px
-    font-size: 14px
-    font-family: $font-monotype
-    color: $text-gray
+    +font-text-mobile
 +md-block
   .advantages
     padding-left: 30px
@@ -93,7 +91,7 @@ export default {
       flex-basis: 80px
       width: 80px
     &__text
-      font-size: 16px
+      +font-text-tablet
       padding: 0
       margin-top: 35px
       padding-right: 40px
@@ -106,5 +104,6 @@ export default {
     box-sizing: border-box
     &__list
       height: auto
+      margin: 0
 
 </style>

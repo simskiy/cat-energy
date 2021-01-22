@@ -51,13 +51,11 @@ export default {
     background-position: center left
     background-repeat: no-repeat
   &__text
-    font-size: 14px
-    color: $text-gray
+    +font-text-mobile
     padding-top: 20px
     padding-bottom: 20px
     margin: 0
     border-bottom: 1px solid $border-color
-    font-family: $font-monotype
   &__link
     display: inline-block
     position: relative
@@ -119,7 +117,7 @@ export default {
       margin-top: 30px
       font-size: 36px
     &__text
-      font-size: 16px
+      +font-text-tablet
       padding-top: 25px
       padding-bottom: 25px
       padding-right: 235px

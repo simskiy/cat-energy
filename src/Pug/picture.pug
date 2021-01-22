@@ -9,15 +9,15 @@ mixin picture-retina(classname, name, alt="фото")
     img(src=`./img/${name}-mobile.jpg`, alt=alt)
 
 
-mixin picture-img(classname, name, alt="Фото")
+mixin picture-img(classname, name, alt="Фото", attr)
   - var desktop = "min-width: 1220px";
   - var tablet = "min-width: 768px";
   - var mobile = "min-width: 320px";
-  picture(class=classname)
-    source(media=`(${desktop})`, srcset=`./img/${name}-desktop.jpg`)
-    source(media=`(${tablet})`, srcset=`./img/${name}-tablet.jpg`)
-    source(media=`(${mobile})`, srcset=`./img/${name}-mobile.jpg`)
-    img(src=`./img/${name}-mobile.jpg`, alt=alt)
+  picture(class=classname)&attributes(attr)
+    source(media=`(${desktop})`, srcset=`./img/${name}-desktop.png`)
+    source(media=`(${tablet})`, srcset=`./img/${name}-tablet.png`)
+    source(media=`(${mobile})`, srcset=`./img/${name}-mobile.png`)
+    img(src=`./img/${name}-mobile.png`, alt=alt)
 
 mixin picture-svg(classname, name, alt="Фото")
   - var desktop = "min-width: 1220px";
