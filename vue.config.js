@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-
+  filenameHashing: true,
   devServer: {
     hot: true,
     open: true
