@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .menu
   width: 100%
   height: auto

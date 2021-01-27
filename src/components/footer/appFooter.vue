@@ -1,6 +1,6 @@
 <template lang="pug">
 footer.footer
-  .footer__contacts
+  .footer__contacts(:style=`bgColor`)
     .footer__text
       p приглашаем к сотрудничеству дилеров!
     .footer__adress
@@ -38,10 +38,27 @@ footer.footer
 </template>
 
 <script>
-
+import { eventEmitter } from '../../main.js'
+export default {
+  data () {
+    return {
+      footerColor: '#fff'
+    }
+  },
+  computed: {
+    bgColor () {
+      return `background-color: ${this.footerColor}`
+    }
+  },
+  created () {
+    eventEmitter.$on('changeBgColorFooter', (color) => {
+      this.footerColor = color
+    })
+  }
+}
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .footer
   box-sizing: border-box
   width: 100%
@@ -54,7 +71,7 @@ footer.footer
     flex-wrap: wrap
     padding-top: 25px
     padding-bottom: 25px
-    background-color: $color-white
+    // background-color: $color-white
   &__text
     margin: 0
     flex-basis: 50%

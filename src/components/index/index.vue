@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { eventEmitter } from '../../main.js'
 import appHeader from './header.vue'
 import appCategories from './categories.vue'
 import appAdvantages from './advantages.vue'
@@ -17,6 +18,9 @@ export default {
     appCategories,
     appAdvantages,
     appCompare
+  },
+  created () {
+    eventEmitter.$emit('changeBgColorFooter', '#fff')
   }
 }
 </script>

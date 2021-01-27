@@ -147,6 +147,7 @@ export default {
     font-size: 16px
     font-weight: 400
     text-transform: uppercase
+    padding-bottom: 39px
   &__before-text
     margin-right: 19px
   &__after-text
