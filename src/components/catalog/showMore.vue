@@ -1,7 +1,7 @@
 <template lang="pug">
   li.show-more
     h3.show-more__title Показать еще 100500 товаров
-    p.show-more__text На самом деле вкусов гораздо больше!!
+    p.show-more__text На самом деле вкусов гораздо больше!
     button.show-more__btn Показать все
 </template>
 
@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$border-color: #cdcdcd
 .show-more
   display: flex
   flex-direction: column
@@ -25,7 +26,10 @@ export default {
   padding-right: 20px
   padding-bottom: 25px
   height: 210px
-  background: url('./img/cross.svg') no-repeat top 25px center
+  background-image: url('./img/cross.svg')
+  background-repeat: no-repeat
+  background-position: top 25px center
+  background-size: 30px 30px
   border-bottom: 1px solid $color-line
   &__title
     margin: 0
@@ -55,4 +59,24 @@ export default {
       background-color: #ebebeb
     &:active
       color: rgba($btn-text, 0.3)
++md-block
+  .show-more
+    border: 1px solid $border-color
+    height: 430px
+    padding-left: 37px
+    padding-right: 37px
+    padding-bottom: 40px
+    justify-content: space-between
+    background-size: 60px 60px
+    background-position: top 55px center
+    &__title
+      margin-top: 165px
+      width: 155px
+      font-size: 20px
+      text-align: center
+    &__text
+      width: 170px
+      font-size: 16px
+      line-height: 1.2
+      text-align: center
 </style>

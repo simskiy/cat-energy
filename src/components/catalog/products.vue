@@ -41,13 +41,24 @@ export default {
     list-style: none
     padding: 0
     margin: 0
-  &__item
-    padding-left: 20px
-    padding-right: 20px
-    padding-bottom: 25px
-    border-bottom: 1px solid $color-line
 +md-block
   .catalog
+    padding-left: 30px
+    padding-right: 30px
     &__list
+      display: grid
+      grid-template-columns: 1fr 1fr
+      column-gap: 60px
     &__item
+      box-sizing: border-box
+      // border: none
+      margin-top: 140px
++lg-block
+  .catalog
+    padding: 0
+    &__list
+      grid-template-columns: repeat(4, 245px)
+      justify-items: space-between
+      margin: auto
+
 </style>

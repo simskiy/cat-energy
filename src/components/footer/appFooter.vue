@@ -191,7 +191,7 @@ export default {
     &__text
       display: flex
       max-width: 165px
-      margin-left: 70px
+      margin-left: 50px
       font-size: 20px
       align-items: center
     &__adress
@@ -199,7 +199,7 @@ export default {
       font-size: 16px
       align-items: center
       max-width: 165px
-      margin-right: 70px
+      margin-right: 50px
       text-align: right
     &__map
       height: 400px

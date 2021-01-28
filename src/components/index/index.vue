@@ -19,8 +19,13 @@ export default {
     appAdvantages,
     appCompare
   },
-  created () {
+  mounted () {
     eventEmitter.$emit('changeBgColorFooter', '#fff')
+    if (window.innerWidth < 1220) {
+      eventEmitter.$emit('changeTextColorNav', '#000')
+    } else {
+      eventEmitter.$emit('changeTextColorNav', '#fff')
+    }
   }
 }
 </script>

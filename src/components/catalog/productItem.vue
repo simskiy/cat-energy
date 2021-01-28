@@ -1,6 +1,6 @@
 <template lang="pug">
   li.item
-    picture.item__picture
+    picture.item__picture(:class="getSize")
       source(:media="desktop", :srcset="getImageDesktop")
       source(:media="tablet", :srcset="getImageTablet")
       source(:media="mobile", :srcset="getImageMobile")
@@ -40,15 +40,27 @@ export default {
     },
     getImageMobile () {
       return require(`./img/${this.image}-mobile.png`)
+    },
+    getSize () {
+      switch (this.size) {
+        case 500: return 'item__picture--small'
+        case 1000: return 'item__picture--big'
+      }
+      return undefined
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
+$border-color: #cdcdcd
 .item
   display: flex
   flex-wrap: wrap
+  padding-left: 20px
+  padding-right: 20px
+  padding-bottom: 25px
+  border-bottom: 1px solid $color-line
   &__picture
     flex-basis: 50%
     height: 144px
@@ -89,4 +101,41 @@ export default {
       background-color: $btn-hover
     &:active
       color: rgba($color-white, 0.3)
++md-block
+  .item
+    position: relative
+    height: 430px
+    background-color: $bg-gray
+    flex-direction: column
+    align-items: center
+    flex-wrap: nowrap
+    padding-left: 37px
+    padding-right: 37px
+    padding-bottom: 40px
+    &__picture
+      position: absolute
+      height: auto
+      bottom: 305px
+      &--small
+        left: calc(100%/2 - 75px)
+      &--big
+        left: calc(100%/2 - 95px)
+    &__description
+      margin-top: 165px
+      width: 100%
+      flex-basis: auto
+    &__title
+      margin: 0
+      margin: auto
+      width: 140px
+      font-size: 20px
+      text-align: center
+    &__text
+      border-bottom: 1px solid $border-color
+      height: 30px
+      line-height: 30px
+      font-size: 16px
+    &__btn
+      margin-top: auto
+
 </style>

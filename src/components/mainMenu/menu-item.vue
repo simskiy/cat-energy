@@ -1,11 +1,27 @@
 <template lang="pug">
   li.menu-item
-    router-link(:to="href", class="menu-item__link", active-class="menu-item__link--active" exact) {{title}}
+    router-link(:to="href", class="menu-item__link", active-class="menu-item__link--active", :style="textColorNav" exact) {{title}}
 </template>
 
 <script>
+import { eventEmitter } from '../../main.js'
 export default {
-  props: ['href', 'title']
+  props: ['href', 'title'],
+  data () {
+    return {
+      textColor: '#fff'
+    }
+  },
+  computed: {
+    textColorNav () {
+      return `color: ${this.textColor}`
+    }
+  },
+  mounted () {
+    eventEmitter.$on('changeTextColorNav', (color) => {
+      this.textColor = color
+    })
+  }
 }
 </script>
 
@@ -30,7 +46,7 @@ export default {
       padding-top: 9px
       padding-bottom: 9px
       text-decoration: none
-      color: $text-black
+      // color: $text-black
       &--active
         border-bottom: 2px solid $border-active-tablet
 
@@ -48,7 +64,7 @@ export default {
     .menu-item
       &__link
         font-size: 20px
-        color: $color-white
+        // color: $color-white
         &--active
           border-bottom: 2px solid $border-active-desktop
 
