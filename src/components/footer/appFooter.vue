@@ -3,7 +3,7 @@ footer.footer
   .footer__contacts(:style=`bgColor`)
     .footer__text
       p приглашаем к сотрудничеству дилеров!
-    .footer__adress
+    address.footer__adress
       p ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
   .footer__map
     div(style='position:relative;overflow:hidden;')

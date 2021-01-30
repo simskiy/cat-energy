@@ -17,7 +17,7 @@
         li.item__text
           span Цена:
           span {{price}} Р.
-    button.item__btn Заказать
+    app-btn.item__btn Заказать
 </template>
 
 <script>
@@ -87,20 +87,6 @@ $border-color: #cdcdcd
     font-weight: 400
     font-family: $font-monotype
     color: $text-gray
-  &__btn
-    cursor: pointer
-    height: 40px
-    background-color: $btn-color
-    color: $color-white
-    font-size: 16px
-    text-transform: uppercase
-    width: 100%
-    outline: none
-    border: none
-    &:hover
-      background-color: $btn-hover
-    &:active
-      color: rgba($color-white, 0.3)
 +md-block
   .item
     position: relative

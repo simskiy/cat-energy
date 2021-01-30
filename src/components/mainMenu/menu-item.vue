@@ -9,7 +9,7 @@ export default {
   props: ['href', 'title'],
   data () {
     return {
-      textColor: '#fff'
+      textColor: '#000'
     }
   },
   computed: {
@@ -67,5 +67,4 @@ export default {
         // color: $color-white
         &--active
           border-bottom: 2px solid $border-active-desktop
-
 </style>

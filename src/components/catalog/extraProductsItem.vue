@@ -4,7 +4,7 @@
     p.item__text
       span.item__name {{name}}
       span.item__price {{price}} Р.
-    button.item__btn Заказать
+    app-btn.item__btn Заказать
 </template>
 
 <script>
@@ -36,20 +36,6 @@ $border-color: #cdcdcd
     font-family: $font-monotype
     color: $color-text
     font-weight: 400
-  &__btn
-    cursor: pointer
-    height: 40px
-    width: 100%
-    font-size: 16px
-    text-transform: uppercase
-    border: none
-    background-color: $btn-color
-    color: $color-white
-    outline: none
-    &:hover
-      background-color: $btn-hover
-    &:active
-      color: rgba($color-white, 0.3)
 +md-block
   .item
     display: flex
