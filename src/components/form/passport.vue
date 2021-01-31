@@ -54,6 +54,9 @@ export default {
   list-style: none
   padding: 0
   margin: 0
+  margin-left: 20px
+  margin-right: 20px
+  margin-top: 39px
   &__block
     display: flex
     align-items: center

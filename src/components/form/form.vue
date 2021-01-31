@@ -2,14 +2,9 @@
   section.form
     h1.form__title Подбор программы
     form.form__form(action="", method="get")
-      app-info.form__cat-info
+      cat-info.form__cat-info
+      form-contacts.form__contacts
 
-      div.form__contacts
-        h2.form__subtitle Контактные данные (владельца кота)
-        label(for="email") e-mail:*
-        input#email(type="email", name="email")
-        label(for="phone") Телефон:*
-        input#phone(type="text")
       div.form__comment
         h2.form__subtitle Комментарий
         textarea(name="comment")
@@ -28,7 +23,8 @@
 </template>
 
 <script>
-import appInfo from './appInfo.vue'
+import catInfo from './appInfo.vue'
+import formContacts from './formContacts.vue'
 import { eventEmitter } from '../../main.js'
 export default {
   data () {
@@ -36,7 +32,8 @@ export default {
     }
   },
   components: {
-    appInfo
+    catInfo,
+    formContacts
   },
   mounted () {
     eventEmitter.$emit('changeTextColorNav', '#000')

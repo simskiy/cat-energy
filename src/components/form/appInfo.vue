@@ -37,8 +37,5 @@ export default {
     text-transform: uppercase
     color: $color-black
   &__passport
-    margin-left: 20px
-    margin-right: 20px
-    margin-top: 39px
   &__course
 </style>

@@ -15,7 +15,6 @@ export default {
 $border-color: #cdcdcd
 $text-color: #444
 .input-text
-  // width: 100%
   box-sizing: border-box
   height: 45px
   border: 1px solid $border-color
