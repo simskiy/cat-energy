@@ -6,7 +6,6 @@ button.btn
 
 <script>
 export default {
-
 }
 </script>
 

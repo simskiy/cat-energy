@@ -10,7 +10,6 @@ section.categories
       h3.categories__title Набор массы
       p.categories__text Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
       router-link(to='' class='categories__link') Каталог Pro
-  btn
 
 </template>
 

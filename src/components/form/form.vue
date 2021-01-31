@@ -1,35 +1,20 @@
 <template lang="pug">
   section.form
     h1.form__title Подбор программы
-    form(action="", method="get")
-      span Заполните анкету и мы подберем программу питания для вашего кота
-      div
-        h2.unvis Данные кота
-        label(for="name") Имя:*
-        input#name(type="text", name="name", required)
-        label(for="weight") Вес (кг):*
-        input#weight(type="text", name="weight", required)
-        label(for="age") Возраст (лет):
-        input#age(type="number", name="age")
-      div
-        h2.unvis
-        input#slimm(type="radio", name="course", checked)
-        label(for="slimm") Похудение
-        input#fat(type="radio", name="course")
-        label(for="fat") Набор массы
-        input#advice(type="radio", name="course")
-        label(for="advice") Не знаю (нужен ваш совет)
-      div
-        h2 Контактные данные (владельца кота)
+    form.form__form(action="", method="get")
+      app-info.form__cat-info
+
+      div.form__contacts
+        h2.form__subtitle Контактные данные (владельца кота)
         label(for="email") e-mail:*
         input#email(type="email", name="email")
         label(for="phone") Телефон:*
         input#phone(type="text")
-      div
-        h2 Комментарий
+      div.form__comment
+        h2.form__subtitle Комментарий
         textarea(name="comment")
-      div
-        h2 Дополнительно
+      div.form__options
+        h2.form__subtitle Дополнительно
         input#sugar(type="checkbox", name="sugar", checked)
         label(for="sugar") Сахарозаменитель
         input#water(type="checkbox", name="water")
@@ -38,17 +23,20 @@
         label(for="milk") Молоко
         input#vitamin(type="checkbox", name="vitamin")
         label(for="vitamin") Витамины
-      button(type="submit") Отправить заявку
+      app-btn.form-btn(type="submit") Отправить заявку
       span * &ndash; Обязательные поля
-
 </template>
 
 <script>
+import appInfo from './appInfo.vue'
 import { eventEmitter } from '../../main.js'
 export default {
   data () {
     return {
     }
+  },
+  components: {
+    appInfo
   },
   mounted () {
     eventEmitter.$emit('changeTextColorNav', '#000')
@@ -56,5 +44,27 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="sass" scoped>
+.form
+  &__form
+    margin-top: 35px
+  &__title
+    margin: 0
+    margin-top: 30px
+    margin-left: 20px
+    margin-right: 20px
+    font-size: 36px
+    font-weight: 400
+    color: $color-black
+  &__text
+    display: inline-block
+    margin-top: 35px
+    margin-left: 20px
+    margin-left: 20px
+    font-size: 14px
+    font-weight: 400
+    line-height: 18px
+    text-transform: uppercase
+    color: $color-black
+  &__cat-info
 </style>
