@@ -52,21 +52,29 @@ $border-color: #cdcdcd
 
 .options
   $border-color: #cdcdcd
+  position: relative
   border: none
   padding: 0
   margin: 0
-  padding-bottom: 34px
   &__title
     font-size: 24px
     line-height: 24px
     font-weight: 400
     color: $color-black
     padding-left: 20px
-    padding-top: 30px
-    margin-bottom: 30px
+    &:before
+      position: absolute
+      top: 15px
+      left: 180px
+      right: 0
+      content: ''
+      display: block
+      height: 3px
+      background-color: $color-green
   &__list
     padding: 0
     margin: 0
+    margin-top: 30px
     list-style: none
   &__item
     position: relative

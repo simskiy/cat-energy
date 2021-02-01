@@ -46,7 +46,6 @@ $border-color: #ededed
   padding-left: 20px
   padding-right: 20px
   margin-top: 20px
-  margin-bottom: 30px
   border-top: 1px solid $border-color
   border-bottom: 1px solid $border-color
   &__input

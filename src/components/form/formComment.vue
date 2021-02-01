@@ -21,7 +21,6 @@ $border-color: #cdcdcd
 .comment
   position: relative
   width: 100%
-  margin-top: 30px
   &__title
     font-size: 24px
     line-height: 24px
