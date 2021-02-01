@@ -5,17 +5,7 @@
       cat-info.form__cat-info
       form-contacts.form__contacts
       form-comment.form__comment
-
-      div.form__options
-        h2.form__subtitle Дополнительно
-        input#sugar(type="checkbox", name="sugar", checked)
-        label(for="sugar") Сахарозаменитель
-        input#water(type="checkbox", name="water")
-        label(for="water") Питьевая вода
-        input#milk(type="checkbox", name="milk")
-        label(for="milk") Молоко
-        input#vitamin(type="checkbox", name="vitamin")
-        label(for="vitamin") Витамины
+      form-options.form__options
       app-btn.form-btn(type="submit") Отправить заявку
       span * &ndash; Обязательные поля
 </template>
@@ -24,6 +14,7 @@
 import catInfo from './appInfo.vue'
 import formContacts from './formContacts.vue'
 import formComment from './formComment.vue'
+import formOptions from './formOptions.vue'
 import { eventEmitter } from '../../main.js'
 export default {
   data () {
@@ -33,7 +24,8 @@ export default {
   components: {
     catInfo,
     formContacts,
-    formComment
+    formComment,
+    formOptions
   },
   mounted () {
     eventEmitter.$emit('changeTextColorNav', '#000')

@@ -49,6 +49,7 @@ export default {
 .contacts
   position: relative
   border: none
+  margin: 0
   padding: 0
   &__title
     display: inline-block

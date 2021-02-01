@@ -53,11 +53,4 @@ $border-color: #cdcdcd
     font-weight: 400
     text-transform: uppercase
     color: $placeholder-color
-    &:placeholder
-      // font-size: 16px
-      // line-height: 18px
-      // font-weight: 400
-      // text-transform: uppercase
-      // color: $placeholder-color
-
 </style>
