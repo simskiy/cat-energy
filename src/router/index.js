@@ -9,16 +9,25 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: index
+    component: index,
+    meta: {
+      title: 'Главная страница'
+    }
   },
   {
     path: '/catalog',
-    component: catalog
+    component: catalog,
+    meta: {
+      title: 'Каталог продукции'
+    }
 
   },
   {
     path: '/form',
-    component: form
+    component: form,
+    meta: {
+      title: 'Подбор программы'
+    }
   }
 ]
 
@@ -26,6 +35,13 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach(async (to, from, next) => {
+  const { title } = to.meta
+  const brand = 'Cat Energy'
+  document.title = `${title ? title + ' | ' : ''}${brand}`
+  next()
 })
 
 export default router

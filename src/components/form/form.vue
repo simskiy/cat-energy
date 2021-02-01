@@ -71,4 +71,5 @@ export default {
     color: $note-color
     text-align: center
     margin-top: 20px
+    margin-bottom: 34px
 </style>
