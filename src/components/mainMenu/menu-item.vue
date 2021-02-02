@@ -37,6 +37,7 @@ export default {
     transition: height $transition-time
     font-size: 20px
     font-weight: 500
+    white-space: nowrap
     &:hover
       opacity: 0.6
     &:active

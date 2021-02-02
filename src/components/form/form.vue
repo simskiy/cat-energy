@@ -1,13 +1,12 @@
 <template lang="pug">
-  section.form
+  main.form
     h1.form__title Подбор программы
     form.form__form(action="", method="get")
       cat-info.form__cat-info
       form-contacts.form__contacts
       form-comment.form__comment
       form-options.form__options
-      app-btn.form__btn(type="submit") Отправить заявку
-      span.form__note * &mdash; Обязательные поля
+      form-btn.form__btn
 </template>
 
 <script>
@@ -15,6 +14,7 @@ import catInfo from './appInfo.vue'
 import formContacts from './formContacts.vue'
 import formComment from './formComment.vue'
 import formOptions from './formOptions.vue'
+import formBtn from './formBtn.vue'
 import { eventEmitter } from '../../main.js'
 export default {
   data () {
@@ -25,7 +25,8 @@ export default {
     catInfo,
     formContacts,
     formComment,
-    formOptions
+    formOptions,
+    formBtn
   },
   mounted () {
     eventEmitter.$emit('changeTextColorNav', '#000')
@@ -41,7 +42,8 @@ export default {
 
 <style lang="sass" scoped>
 .form
-  $note-color: #444
+  max-width: 1440px
+  margin: auto
   &__form
     margin-top: 35px
   &__title
@@ -52,24 +54,40 @@ export default {
     font-size: 36px
     font-weight: 400
     color: $color-black
-  &__cat-info
   &__contacts
     margin-top: 39px
   &__comment
     margin-top: 39px
   &__options
     margin-top: 39px
-  &__btn
-    margin-top: 39px
-  &__note
-    display: inline-block
-    width: 100%
-    font-family: $font-monotype
-    font-size: 14px
-    line-height: 16px
-    font-weight: 400
-    color: $note-color
-    text-align: center
-    margin-top: 20px
-    margin-bottom: 34px
+
++md-block
+  .form
+    &__title
+      font-size: 60px
+      line-height: auto
+      margin-top: 60px
+      margin-left: 70px
+      margin-right: 70px
+    &__cat-info
+      margin-top: 50px
+    &__contacts
+      margin-top: 80px
+    &__comment
+      margin-top: 70px
+    &__options
+      margin-top: 70px
+    &__btn
+      margin-bottom: 70px
+
++lg-block
+  .form
+    margin-top: 194px
+    &__title
+      margin-left: 110px
+      margin-right: 110px
+    &__contacts
+      margin-top: 70px
+    &__btn
+      margin-bottom: 80px
 </style>

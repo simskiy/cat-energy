@@ -43,17 +43,32 @@ $border-color: #ededed
 .course
   list-style: none
   margin: 0
-  padding-left: 20px
-  padding-right: 20px
-  margin-top: 20px
+  padding: 20px
   border-top: 1px solid $border-color
   border-bottom: 1px solid $border-color
+  &__block
+    display: flex
+    align-items: center
+    height: 30px
+    margin-top: 12px
+    &:first-of-type
+      margin-top: 0
   &__input
     display: none
   &__label
     padding-left: 45px
-  &__block
-    display: flex
-    align-items: center
-    height: 55px
++md-block
+  .course
+    margin-left: 70px
+    margin-right: 70px
+    padding: 25px
+    border: 1px solid $border-color
+    &__block
+      height: 40px
+    &__label
+      padding-left: 60px
++lg-block
+  .course
+    margin: 0
+    flex-basis: 45%
 </style>

@@ -10,6 +10,7 @@ fieldset.contacts
         :name="value.name"
         :required="value.required"
         :placeholder="value.placeholder"
+        :class="value.class"
       )
 </template>
 
@@ -26,14 +27,16 @@ export default {
           name: 'email',
           required: true,
           placeholder: 'kuklachev@gmail.com',
-          labelText: 'e-mail:*'
+          labelText: 'e-mail:*',
+          class: 'contacts__input--email'
         },
         {
           type: 'phone',
           name: 'phone',
           required: true,
           placeholder: '8 (960) 900-60-90',
-          labelText: 'Телефон:*'
+          labelText: 'Телефон:*',
+          class: 'contacts__input--phone'
         }
       ]
     }
@@ -79,6 +82,7 @@ export default {
     display: flex
     align-items: center
     margin-top: 15px
+    height: 45px
     &:first-of-type
       margin-top: 0
   &__label
@@ -86,4 +90,52 @@ export default {
     white-space: nowrap
   &__input
     width: 100%
+    height: 100%
+    padding-left: 15px
+    padding-right: 45px
+    background-repeat: no-repeat
+    &--email
+      background-image: url('./img/letter.svg')
+      background-position: right 17px center
+    &--phone
+      background-image: url('./img/phone.svg')
+      background-position: right 13px center
++md-block
+  .contacts
+    &__title
+      line-height: inherit
+      margin-left: 30px
+      margin-bottom: 0
+      padding-left: 40px
+      font-size: 36px
+      width: 595px
+      text-align: left
+      background-color: $color-white
+      &:before
+        top: 25px
+        z-index: -10
+        left: 0
+    &__list
+      padding-left: 70px
+      padding-right: 70px
+      margin-top: 70px
+    &__item
+      margin-top: 20px
+      height: 52px
+    &__label
+    &__input
+      font-size: 20px
++lg-block
+  .contacts
+    &__title
+      margin-left: 70px
+    &__list
+      display: flex
+      justify-content: space-between
+    &__item
+      margin: 0
+      flex-basis: 45%
+    &__list
+      padding-right: 110px
+      padding-left: 110px
 </style>

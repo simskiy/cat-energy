@@ -50,13 +50,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$border-color: #cdcdcd
+$text-color: #444
 .passport
   list-style: none
   padding: 0
   margin: 0
   margin-left: 20px
   margin-right: 20px
-  margin-top: 39px
   &__block
     display: flex
     align-items: center
@@ -68,9 +69,6 @@ export default {
     white-space: nowrap
   &__input
     width: 100%
-
-$border-color: #cdcdcd
-$text-color: #444
 .input-text
   box-sizing: border-box
   height: 45px
@@ -82,4 +80,18 @@ $text-color: #444
   color: $text-color
   padding-left: 15px
   padding-right: 15px
+
++md-block
+  .passport
+    margin-left: 70px
+    margin-right: 70px
+    &__block
+      margin-top: 20px
+    &__input
+      font-size: 20px
+
++lg-block
+  .passport
+    margin: 0
+    flex-basis: 45%
 </style>

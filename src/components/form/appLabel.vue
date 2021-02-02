@@ -24,12 +24,15 @@ $border-color: #cdcdcd
   text-transform: uppercase
   color: $color
   font-weight: 400
+
 +md-block
-  font-size: 20px
+  .label
+    font-size: 20px
 
 .course__input + label
   position: relative
   &::before
+    box-sizing: border-box
     position: absolute
     left: 0px
     top: -5px
@@ -43,6 +46,7 @@ $border-color: #cdcdcd
 
 .course__input[data-checked] + label
   &::before
+    box-sizing: border-box
     position: absolute
     left: 0px
     top: -5px
@@ -54,5 +58,17 @@ $border-color: #cdcdcd
     border-radius: 50%
     background-color: $color-green
     box-shadow: inset 0 0 0 9px $color-white
++md-block
+  .course__input + label::before
+    width: $md-size
+    height: $md-size
+    left: 0
+    top: -8px
+  .course__input[data-checked] + label::before
+    width: $md-size
+    height: $md-size
+    left: 0
+    top: -8px
+    box-shadow: inset 0 0 0 10px $color-white
 
 </style>

@@ -36,6 +36,9 @@ $border-color: #cdcdcd
     font-family: $font-monotype
     color: $color-text
     font-weight: 400
+  &__btn
+    height: 40px
+    width: 100%
 +md-block
   .item
     display: flex

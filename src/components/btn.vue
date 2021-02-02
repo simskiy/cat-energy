@@ -12,8 +12,8 @@ export default {
 <style lang="sass" scoped>
 .btn
   cursor: pointer
-  height: 40px
-  width: 100%
+  // height: 40px
+  // width: 100%
   font-size: 16px
   text-transform: uppercase
   border: none

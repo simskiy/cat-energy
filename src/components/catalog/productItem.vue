@@ -87,6 +87,9 @@ $border-color: #cdcdcd
     font-weight: 400
     font-family: $font-monotype
     color: $text-gray
+  &__btn
+    width: 100%
+    height: 40px
 +md-block
   .item
     position: relative

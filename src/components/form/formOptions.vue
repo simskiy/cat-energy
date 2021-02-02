@@ -106,4 +106,46 @@ $border-color: #cdcdcd
     background-size: contain
     background-position: center center
     background-origin: content-box
++md-block
+  .options
+    &__title
+      display: inline-block
+      line-height: inherit
+      margin-left: 30px
+      margin-bottom: 0
+      padding-left: 40px
+      font-size: 36px
+      width: 290px
+      text-align: left
+      background-color: $color-white
+      &:before
+        top: 25px
+        z-index: -10
+        left: 0
+    &__list
+      display: flex
+      flex-wrap: wrap
+      margin-top: 30px
+      margin-left: 70px
+      margin-right: 70px
+    &__item
+      margin: 0
+      flex-basis: 50%
+      height: 70px
+    &__label
+      padding-left: 60px
+      &:before
+        width: 40px
+        height: 40px
+        padding: 10px
+        top: 16px
++lg-block
+  .options
+    &__title
+      margin-left: 70px
+    &__item
+      flex-basis: 25%
+    &__list
+      margin-left: 110px
+      margin-right: 110px
 </style>

@@ -4,11 +4,15 @@
       h1.header__title Функциональное питания для котов
       span.header__slogan Занялся собой? Займись котом!
       router-link(to="/form", class="header__link")
-        button.header__btn Подобрать программу
+        app-btn.header__btn Подобрать программу
 </template>
 
 <script>
+import appBtn from '../btn.vue'
 export default {
+  components: {
+    appBtn
+  }
 }
 </script>
 
@@ -43,14 +47,9 @@ export default {
     margin-top: 300px
     text-align: center
   &__btn
-    cursor: pointer
-    background-color: $btn-color
     width: 280px
     height: 40px
-    border: none
-    outline: none
     font-size: 14px
-    text-transform: uppercase
     color: $color-white
     &:hover
       background-color: $btn-hover
