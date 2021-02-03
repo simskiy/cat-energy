@@ -20,12 +20,23 @@ export default {
     appCompare
   },
   mounted () {
-    eventEmitter.$emit('changeBgColorFooter', '#fff')
-    if (window.innerWidth < 1220) {
-      eventEmitter.$emit('changeTextColorNav', '#000')
-    } else {
-      eventEmitter.$emit('changeTextColorNav', '#fff')
+    this.$nextTick(function () {
+      window.addEventListener('resize', this.setColor)
+      this.setColor()
+    })
+  },
+  methods: {
+    setColor (event) {
+      eventEmitter.$emit('changeBgColorFooter', '#fff')
+      if (window.innerWidth < 1220) {
+        eventEmitter.$emit('changeTextColorNav', '#000')
+      } else {
+        eventEmitter.$emit('changeTextColorNav', '#fff')
+      }
     }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.setColor)
   }
 }
 </script>

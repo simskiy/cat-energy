@@ -7,27 +7,15 @@
 </template>
 
 <script>
-import { eventEmitter } from '../../main.js'
 import products from './products.vue'
 import extraProducts from './extraProducts.vue'
+import colorMixin from '../colorMixin.js'
 export default {
-  data () {
-    return {
-
-    }
-  },
   components: {
     products,
     extraProducts
   },
-  mounted () {
-    if (window.innerWidth >= 1220) {
-      eventEmitter.$emit('changeBgColorFooter', '#fff')
-    } else {
-      eventEmitter.$emit('changeBgColorFooter', '#f2f2f2')
-    }
-    eventEmitter.$emit('changeTextColorNav', '#000')
-  }
+  mixins: [colorMixin]
 }
 </script>
 

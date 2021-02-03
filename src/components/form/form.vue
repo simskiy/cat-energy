@@ -15,12 +15,8 @@ import formContacts from './formContacts.vue'
 import formComment from './formComment.vue'
 import formOptions from './formOptions.vue'
 import formBtn from './formBtn.vue'
-import { eventEmitter } from '../../main.js'
+import colorMixin from '../colorMixin.js'
 export default {
-  data () {
-    return {
-    }
-  },
   components: {
     catInfo,
     formContacts,
@@ -28,15 +24,7 @@ export default {
     formOptions,
     formBtn
   },
-  mounted () {
-    eventEmitter.$emit('changeTextColorNav', '#000')
-
-    if (window.innerWidth >= 1220) {
-      eventEmitter.$emit('changeBgColorFooter', '#fff')
-    } else {
-      eventEmitter.$emit('changeBgColorFooter', '#f2f2f2')
-    }
-  }
+  mixins: [colorMixin]
 }
 </script>
 
