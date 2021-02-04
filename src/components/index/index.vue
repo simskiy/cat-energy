@@ -30,8 +30,10 @@ export default {
       eventEmitter.$emit('changeBgColorFooter', '#fff')
       if (window.innerWidth < 1220) {
         eventEmitter.$emit('changeTextColorNav', '#000')
+        eventEmitter.$emit('changeBorderColor', '#68b738')
       } else {
         eventEmitter.$emit('changeTextColorNav', '#fff')
+        eventEmitter.$emit('changeBorderColor', '#fff')
       }
     }
   },

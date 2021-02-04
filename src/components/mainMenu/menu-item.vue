@@ -1,6 +1,6 @@
 <template lang="pug">
   li.menu-item
-    router-link(:to="href", class="menu-item__link", active-class="menu-item__link--active", :style="textColorNav" exact) {{title}}
+    router-link(:to="href", class="menu-item__link", active-class="menu-item__link--active", :style="styleObject" exact) {{title}}
 </template>
 
 <script>
@@ -9,17 +9,20 @@ export default {
   props: ['href', 'title'],
   data () {
     return {
-      textColor: '#000'
-    }
-  },
-  computed: {
-    textColorNav () {
-      return `color: ${this.textColor}`
+      textColor: '#000',
+      borderColor: '#000',
+      styleObject: {
+        color: this.textColor,
+        borderColor: this.borderColor
+      }
     }
   },
   mounted () {
     eventEmitter.$on('changeTextColorNav', (color) => {
-      this.textColor = color
+      this.styleObject.color = color
+    })
+    eventEmitter.$on('changeBorderColor', (color) => {
+      this.styleObject.borderColor = color
     })
   }
 }
@@ -47,9 +50,10 @@ export default {
       padding-top: 9px
       padding-bottom: 9px
       text-decoration: none
-      // color: $text-black
       &--active
-        border-bottom: 2px solid $border-active-tablet
+        border-bottom-widht: 2px
+        border-bottom-style: solid
+        border-color: $border-active-tablet
 
   +md-block
     .menu-item
@@ -65,7 +69,6 @@ export default {
     .menu-item
       &__link
         font-size: 20px
-        // color: $color-white
         &--active
           border-bottom: 2px solid $border-active-desktop
 </style>

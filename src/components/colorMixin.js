@@ -10,6 +10,7 @@ export default {
     setColor (event) {
       if (window.innerWidth >= 1220) {
         eventEmitter.$emit('changeBgColorFooter', '#fff')
+        eventEmitter.$emit('changeBorderColor', '#68b738')
       } else {
         eventEmitter.$emit('changeBgColorFooter', '#f2f2f2')
       }
