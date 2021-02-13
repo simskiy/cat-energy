@@ -1,6 +1,4 @@
 # cat-energy
-## GitHub Pages
-See [cat-energy page](https://simskiy.github.io/cat-energy)
 
 ## Note
 Макет был найден на необъятных просторах Интернета. Судя по всему, данный макет использутеся в учебных целях на курсах верстки HTML Academy (не реклама). За это им большой спасибо.  
