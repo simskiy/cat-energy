@@ -232,19 +232,13 @@ export default {
       right: 0
       background-size: cover
       background-position: left 0 top 0
-      // overflow: hidden
     &__before
-      // left: 0
       z-index: 2
-      background-color: rgba(255, 255, 255, 1)
-      background-image: url('./img/before-tablet.png')
-      // background-position-x: 0%
+      background-image: url('./img/before-tablet.png'), linear-gradient(180deg, rgba(255,255,255,1) 39.8%, rgba(242,242,242,1) 39.8%)
     &__after
-      // right: 0
       left: auto
       z-index: 1
       background-image: url('./img/after-tablet.png')
-      // background-position-x: 100%
     &__btn
       display: none
     &__range
@@ -290,12 +284,9 @@ export default {
       margin-top: 60px
       font-size: 20px
   .slider
-    // margin-top: 0
     &__before, &__after
-      // background-size: contain
     &__before
-      background-image: url('./img/before-desktop.png')
-
+      background-image: url('./img/before-desktop.png'), linear-gradient(180deg, rgba(255,255,255,1) 28.3%, rgba(242,242,242,1) 28.3%)
     &__after
       background-image: url('./img/after-desktop.png')
 
