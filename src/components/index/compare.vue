@@ -15,8 +15,8 @@
           span Затраты на питание: 15 000 руб.
     div.compare__slider.slider
       div.slider__img
-        div.slider__after(:class="{'slider__after--show': catAfter}", v-model:value="value" :style="widthCatAfter()")
-        div.slider__before(:class="{'slider__before--show': catBefore}", v-model:value="value" :style="widthCatBefore()")
+        div.slider__before(:class="{'slider__before--show': catBefore}" :style="{width: value + '%'}")
+        div.slider__after(:class="{'slider__after--show': catAfter}")
       div.slider__control
         span.slider__before-text Было
         button.slider__btn(@click='changeImg' :class="[{'slider__btn--before': catBefore}, {'slider__btn--after': catAfter}]")
@@ -30,7 +30,7 @@ export default {
     return {
       catBefore: true,
       catAfter: false,
-      value: 50
+      value: 100
     }
   },
   methods: {
@@ -38,20 +38,19 @@ export default {
       this.catBefore = !this.catBefore
       this.catAfter = !this.catAfter
     },
-    widthCatBefore () {
+    setValue () {
       if (window.innerWidth < 768) {
-        return { width: '100%' }
+        this.value = 100
       } else {
-        return { width: this.value + '%' }
-      }
-    },
-    widthCatAfter () {
-      if (window.innerWidth < 768) {
-        return { width: '100%' }
-      } else {
-        return { width: 100 - this.value + '%' }
+        this.value = 50
       }
     }
+  },
+  created () {
+    window.addEventListener('resize', this.setValue)
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.setValue)
   }
 }
 </script>
@@ -130,6 +129,7 @@ export default {
     display: none
     transition: background $transition-time
     width: 100%
+    height: 240px
     background-position-x: center
     background-repeat: no-repeat
     &--show
@@ -170,7 +170,6 @@ export default {
     &--after
       background-position: right
   &__range
-    direction: rtl
     display: none
 
 +md-block
@@ -229,19 +228,23 @@ export default {
       display: block
       height: 100%
       top: 0
-      background-size: cover
-      overflow: hidden
-    &__before
       left: 0
-      z-index: 1
-      background-image: url('./img/before-tablet.png')
-      background-position-x: 0%
-    &__after
       right: 0
-      left: auto
+      background-size: cover
+      background-position: left 0 top 0
+      // overflow: hidden
+    &__before
+      // left: 0
       z-index: 2
+      background-color: rgba(255, 255, 255, 1)
+      background-image: url('./img/before-tablet.png')
+      // background-position-x: 0%
+    &__after
+      // right: 0
+      left: auto
+      z-index: 1
       background-image: url('./img/after-tablet.png')
-      background-position-x: 100%
+      // background-position-x: 100%
     &__btn
       display: none
     &__range
@@ -287,7 +290,7 @@ export default {
       margin-top: 60px
       font-size: 20px
   .slider
-    margin-top: 0
+    // margin-top: 0
     &__before, &__after
       // background-size: contain
     &__before
@@ -297,7 +300,7 @@ export default {
       background-image: url('./img/after-desktop.png')
 
     &__img
-      height: 560px
+      height: 500px
     &__control
       margin-top: 18px
 </style>
